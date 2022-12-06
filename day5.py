@@ -7,13 +7,9 @@ def get_data():
         line = next(f)
         while line != "\n":
             for i, c in enumerate(line):
-                if i % 4 == 1 and c != " ":
+                if c.isalpha():
                     stacks[i // 4].insert(0, c)
             line = next(f)
-
-        for s in stacks:
-            if len(s):
-                s.pop(0)
 
         actions_gen = (x.split() for x in f)
         actions = [(int(line[1]), int(line[3]), int(line[5])) for line in actions_gen]

@@ -15,8 +15,7 @@ def part1(data):
 
 
 def part2(data):
-    ordered_elves = sorted(sum(x) for x in data)
-    return sum(ordered_elves[-3:])
+    return sum(sorted(sum(x) for x in data)[-3:])
 
 
 def main():
